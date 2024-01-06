@@ -1,22 +1,22 @@
 import 'package:get/get.dart';
-import 'package:mad_assignment/pages/account.dart';
-import 'package:mad_assignment/pages/cart.dart';
-import 'package:mad_assignment/pages/checkout.dart';
-import 'package:mad_assignment/pages/home.dart';
-import 'package:mad_assignment/pages/about.dart';
-import 'package:mad_assignment/pages/enquiry.dart';
-import 'package:mad_assignment/pages/myorders.dart';
-import 'package:mad_assignment/pages/refund.dart';
-import 'package:mad_assignment/pages/shop.dart';
-import 'package:mad_assignment/pages/terms_conditions.dart';
-import 'package:mad_assignment/pages/register.dart';
-import 'package:mad_assignment/pages/login.dart';
-import 'package:mad_assignment/pages/whitelist.dart';
+import 'package:mad_assignment/views/account.dart';
+import 'package:mad_assignment/views/cart.dart';
+import 'package:mad_assignment/views/checkout.dart';
+import 'package:mad_assignment/views/home.dart';
+import 'package:mad_assignment/views/about.dart';
+import 'package:mad_assignment/views/enquiry.dart';
+import 'package:mad_assignment/views/myorders.dart';
+import 'package:mad_assignment/views/refund.dart';
+import 'package:mad_assignment/views/shop.dart';
+import 'package:mad_assignment/views/terms_conditions.dart';
+import 'package:mad_assignment/views/register.dart';
+import 'package:mad_assignment/views/login.dart';
+import 'package:mad_assignment/views/whitelist.dart';
 
 class Routes {
   static final route = [
-    GetPage(name: '/register', page: () => const Register()),
-    GetPage(name: '/login', page: () => const LoginPage()),
+    GetPage(name: '/register', page: () => Register()),
+    GetPage(name: '/login', page: () => LoginPage()),
     GetPage(name: '/home', page: () => HomePage()),
     GetPage(name: '/about', page: () => AboutUs()),
     GetPage(name: '/enquiry', page: () => Enquiry()),
