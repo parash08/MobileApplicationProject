@@ -269,71 +269,101 @@ class Account extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextField(
-                          controller: firstNameController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "First Name: ${accountController.accountList[index].firstName}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: firstNameController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "First Name: ${accountController.accountList[index].firstName}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
-                        TextField(
-                          controller: lastNameController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "Last Name: ${accountController.accountList[index].lastName}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: lastNameController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "Last Name: ${accountController.accountList[index].lastName}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
-                        TextField(
-                          controller: emailController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "Email: ${accountController.accountList[index].email}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: emailController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "Email: ${accountController.accountList[index].email}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
-                        TextField(
-                          controller: phoneNumberController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "Phone Number: ${accountController.accountList[index].phoneNumber}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: phoneNumberController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "Phone Number: ${accountController.accountList[index].phoneNumber}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
-                        TextField(
-                          controller: countryController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "Country: ${accountController.accountList[index].country}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: countryController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "Country: ${accountController.accountList[index].country}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
-                        TextField(
-                          controller: cityController,
-                          decoration: InputDecoration(
-                              hintText:
-                                  "City: ${accountController.accountList[index].city}"),
-                          style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.italic),
-                          focusNode: FocusNode(),
+                        Card(
+                          color: const Color.fromARGB(255, 241, 241, 229),
+                          elevation: 4,
+                          clipBehavior: Clip.antiAlias,
+                          child: TextField(
+                            controller: cityController,
+                            decoration: InputDecoration(
+                                hintText:
+                                    "City: ${accountController.accountList[index].city}"),
+                            style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,
+                                fontStyle: FontStyle.italic),
+                            focusNode: FocusNode(),
+                          ),
                         ),
                         const SizedBox(
                           height: 30,

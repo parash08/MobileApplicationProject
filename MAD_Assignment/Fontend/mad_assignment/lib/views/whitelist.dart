@@ -247,7 +247,7 @@ class Whitelist extends StatelessWidget {
               itemCount: getWhitelistController.whiteList.length,
               itemBuilder: (context, index) {
                 return Card(
-                  child: Column(
+                  child: ListView(
                     children: [
                       TextButton(
                         onPressed: () {
@@ -265,47 +265,50 @@ class Whitelist extends StatelessWidget {
                               getWhitelistController
                                   .whiteList[index].productDetails.image
                                   .toString(),
-                          height: Get.height * 0.3,
-                          width: 100,
+                          height: Get.height * 0.2,
+                          width: Get.width,
                           fit: BoxFit.fill,
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            getWhitelistController
-                                .whiteList[index].productDetails.name
-                                .toString(),
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              fontStyle: FontStyle.italic,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              getWhitelistController
+                                  .whiteList[index].productDetails.name
+                                  .toString(),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                fontStyle: FontStyle.italic,
+                              ),
+                              maxLines: 2,
                             ),
-                            maxLines: 2,
-                          ),
-                          Text(
-                            "Rs. ${getWhitelistController.whiteList[index].productDetails.price.toString()}",
-                            style: const TextStyle(
-                              fontStyle: FontStyle.italic,
-                              fontSize: 16,
+                            Text(
+                              "Rs. ${getWhitelistController.whiteList[index].productDetails.price.toString()}",
+                              style: const TextStyle(
+                                fontStyle: FontStyle.italic,
+                                fontSize: 16,
+                              ),
                             ),
-                          ),
-                          TextButton.icon(
-                              onPressed: () {
-                                Get.toNamed('/checkout', parameters: {
-                                  'product_id': getWhitelistController
-                                      .whiteList[index].productDetails.id
-                                      .toString(),
-                                  'product_price': getWhitelistController
-                                      .whiteList[index].productDetails.price
-                                      .toString()
-                                });
-                              },
-                              icon: const Icon(Icons.shopping_cart_checkout),
-                              label: const Text("Buy"))
-                        ],
+                            TextButton.icon(
+                                onPressed: () {
+                                  Get.toNamed('/checkout', parameters: {
+                                    'product_id': getWhitelistController
+                                        .whiteList[index].productDetails.id
+                                        .toString(),
+                                    'product_price': getWhitelistController
+                                        .whiteList[index].productDetails.price
+                                        .toString()
+                                  });
+                                },
+                                icon: const Icon(Icons.shopping_cart_checkout),
+                                label: const Text("Buy"))
+                          ],
+                        ),
                       ),
                     ],
                   ),

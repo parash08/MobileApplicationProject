@@ -338,7 +338,7 @@ class Shop extends StatelessWidget {
                       itemCount: baseProductController.baseProductList.length,
                       itemBuilder: (context, index) {
                         return Card(
-                          child: Column(
+                          child: ListView(
                             children: [
                               TextButton(
                                   onPressed: () {
@@ -355,55 +355,58 @@ class Shop extends StatelessWidget {
                                     baseProductController
                                         .baseProductList[index].image
                                         .toString(),
-                                    height: Get.height * 0.3,
+                                    height: Get.height * 0.2,
                                     width: Get.width,
                                     fit: BoxFit.fill,
                                   )),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Text(
-                                    baseProductController
-                                        .baseProductList[index].name
-                                        .toString(),
-                                    style: const TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      fontStyle: FontStyle.italic,
-                                    ),
-                                    maxLines: 2,
-                                  ),
-                                  Text(
-                                      "Rs. ${baseProductController.baseProductList[index].price.toString()}",
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Text(
+                                      baseProductController
+                                          .baseProductList[index].name
+                                          .toString(),
                                       style: const TextStyle(
-                                          fontStyle: FontStyle.italic,
-                                          fontSize: 16)),
-                                  IconButton(
-                                      onPressed: () {
-                                        cartController.addCart(
-                                            userId: accountController
-                                                .accountList[0].id
-                                                .toString(),
-                                            productId: baseProductController
-                                                .baseProductList[index].id
-                                                .toString());
-                                      },
-                                      icon: const Icon(
-                                          Icons.shopping_basket_rounded)),
-                                  IconButton(
-                                      onPressed: () {
-                                        whitelistController.addWhitelist(
-                                            userId: accountController
-                                                .accountList[0].id
-                                                .toString(),
-                                            productId: baseProductController
-                                                .baseProductList[index].id
-                                                .toString());
-                                      },
-                                      icon: const Icon(Icons.favorite))
-                                ],
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        fontStyle: FontStyle.italic,
+                                      ),
+                                      maxLines: 2,
+                                    ),
+                                    Text(
+                                        "Rs. ${baseProductController.baseProductList[index].price.toString()}",
+                                        style: const TextStyle(
+                                            fontStyle: FontStyle.italic,
+                                            fontSize: 16)),
+                                    IconButton(
+                                        onPressed: () {
+                                          cartController.addCart(
+                                              userId: accountController
+                                                  .accountList[0].id
+                                                  .toString(),
+                                              productId: baseProductController
+                                                  .baseProductList[index].id
+                                                  .toString());
+                                        },
+                                        icon: const Icon(
+                                            Icons.shopping_basket_rounded)),
+                                    IconButton(
+                                        onPressed: () {
+                                          whitelistController.addWhitelist(
+                                              userId: accountController
+                                                  .accountList[0].id
+                                                  .toString(),
+                                              productId: baseProductController
+                                                  .baseProductList[index].id
+                                                  .toString());
+                                        },
+                                        icon: const Icon(Icons.favorite))
+                                  ],
+                                ),
                               )
                             ],
                           ),

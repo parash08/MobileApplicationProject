@@ -46,7 +46,7 @@ class WhitelistModel {
 class ProductDetails {
   int id;
   String name;
-  int price;
+  double price;
   String image;
   String description;
 

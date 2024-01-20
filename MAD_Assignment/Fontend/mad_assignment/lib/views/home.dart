@@ -31,114 +31,124 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white, // Fixed color instantiation
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Row(
-              children: [
-                Text("Shopingo",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Get.toNamed('/account');
-                    },
-                    icon: const Icon(Icons.account_box_rounded)),
-                IconButton(
-                  onPressed: () {
-                    Get.toNamed('/whitelist');
-                  },
-                  icon: const Icon(Icons.favorite),
+        title: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Row(
+                children: [
+                  Text("Shopingo",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 25))
+                ],
+              ),
+              SingleChildScrollView(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Get.toNamed('/account');
+                        },
+                        icon: const Icon(Icons.account_box_rounded)),
+                    IconButton(
+                      onPressed: () {
+                        Get.toNamed('/whitelist');
+                      },
+                      icon: const Icon(Icons.favorite),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Get.toNamed('/cart');
+                      },
+                      icon: const Icon(Icons.shopping_cart),
+                    ),
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {
-                    Get.toNamed('/cart');
-                  },
-                  icon: const Icon(Icons.shopping_cart),
-                ),
-              ],
-            )
-          ],
+              )
+            ],
+          ),
         ),
         actions: [
           PopupMenuButton(
             itemBuilder: (BuildContext context) {
               return [
                 PopupMenuItem(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        child: const Text(
-                          "Info & Links",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "Info & Links",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          Get.toNamed('/refund');
-                        },
-                        icon: const Icon(Icons.policy_outlined),
-                        label: const Text(
-                          "Refund",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                              color: Colors.black),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Get.toNamed('/refund');
+                          },
+                          icon: const Icon(Icons.policy_outlined),
+                          label: const Text(
+                            "Refund",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Colors.black),
+                          ),
                         ),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          Get.toNamed('/terms');
-                        },
-                        icon: const Icon(Icons.run_circle_sharp),
-                        label: const Text(
-                          "Terms",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                              color: Colors.black),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            Get.toNamed('/terms');
+                          },
+                          icon: const Icon(Icons.run_circle_sharp),
+                          label: const Text(
+                            "Terms",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Colors.black),
+                          ),
                         ),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          // Add functionality for "My Orders"
-                          Get.toNamed('/order');
-                        },
-                        icon: const Icon(Icons.shopping_basket),
-                        label: const Text(
-                          "My Orders",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                              color: Colors.black),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            // Add functionality for "My Orders"
+                            Get.toNamed('/order');
+                          },
+                          icon: const Icon(Icons.shopping_basket),
+                          label: const Text(
+                            "My Orders",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Colors.black),
+                          ),
                         ),
-                      ),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          // Add functionality for "Check Out"
-                          // Get.toNamed('/checkout');
-                        },
-                        icon: const Icon(Icons.shopping_cart_checkout_outlined),
-                        label: const Text(
-                          "Check Out",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                              color: Colors.black),
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            // Add functionality for "Check Out"
+                            // Get.toNamed('/checkout');
+                          },
+                          icon:
+                              const Icon(Icons.shopping_cart_checkout_outlined),
+                          label: const Text(
+                            "Check Out",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Colors.black),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 )
               ];
@@ -342,7 +352,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: Get.height * .8,
+            height: Get.height,
             child: Expanded(
               child: FutureBuilder(
                   future: clothsController.fetchCloths(),
@@ -450,7 +460,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: Get.height * .8,
+            height: Get.height,
             child: Expanded(
               child: FutureBuilder(
                   future: shoesController.fetchShoes(),
@@ -558,7 +568,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: Get.height * .8,
+            height: Get.height,
             child: Expanded(
               child: FutureBuilder(
                   future: watchesController.fetchWatches(),
@@ -666,7 +676,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: Get.height * .8,
+            height: Get.height,
             child: Expanded(
               child: FutureBuilder(
                   future: handbagsController.fetchHandbags(),
@@ -776,7 +786,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: Get.height * .8,
+            height: Get.height,
             child: Expanded(
               child: FutureBuilder(
                   future: glassesController.fetchGlasses(),
@@ -795,72 +805,86 @@ class HomePage extends StatelessWidget {
                         itemCount: glassesController.glassesList.length,
                         itemBuilder: (context, index) {
                           return Card(
-                            child: Column(
-                              children: [
-                                TextButton(
-                                    onPressed: () {
-                                      Get.toNamed('/checkout', parameters: {
-                                        'product_id': baseProductController
-                                            .baseProductList[index].id
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.vertical,
+                              child: Column(
+                                children: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Get.toNamed('/checkout', parameters: {
+                                          'product_id': baseProductController
+                                              .baseProductList[index].id
+                                              .toString(),
+                                          'product_price': baseProductController
+                                              .baseProductList[index].price
+                                              .toString()
+                                        });
+                                      },
+                                      child: Image.network(
+                                        glassesController
+                                            .glassesList[index].image
                                             .toString(),
-                                        'product_price': baseProductController
-                                            .baseProductList[index].price
-                                            .toString()
-                                      });
-                                    },
-                                    child: Image.network(
-                                      glassesController.glassesList[index].image
-                                          .toString(),
-                                      height: Get.height * 0.3,
-                                      width: Get.width,
-                                      fit: BoxFit.fill,
-                                    )),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      glassesController.glassesList[index].name
-                                          .toString(),
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                      maxLines: 2,
-                                    ),
-                                    Text(
-                                        "Rs. ${glassesController.glassesList[index].price.toString()}",
-                                        style: const TextStyle(
+                                        height: Get.height * 0.3,
+                                        width: Get.width,
+                                        fit: BoxFit.fill,
+                                      )),
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          glassesController
+                                              .glassesList[index].name
+                                              .toString(),
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18,
                                             fontStyle: FontStyle.italic,
-                                            fontSize: 16)),
-                                    IconButton(
-                                        onPressed: () {
-                                          cartController.addCart(
-                                              userId: accountController
-                                                  .accountList[0].id
-                                                  .toString(),
-                                              productId: baseProductController
-                                                  .baseProductList[index].id
-                                                  .toString());
-                                        },
-                                        icon: const Icon(
-                                            Icons.shopping_basket_rounded)),
-                                    IconButton(
-                                        onPressed: () {
-                                          whitelistController.addWhitelist(
-                                              userId: accountController
-                                                  .accountList[0].id
-                                                  .toString(),
-                                              productId: baseProductController
-                                                  .baseProductList[index].id
-                                                  .toString());
-                                        },
-                                        icon: const Icon(Icons.favorite))
-                                  ],
-                                )
-                              ],
+                                          ),
+                                          maxLines: 2,
+                                        ),
+                                        Text(
+                                            "Rs. ${glassesController.glassesList[index].price.toString()}",
+                                            style: const TextStyle(
+                                                fontStyle: FontStyle.italic,
+                                                fontSize: 16)),
+                                        IconButton(
+                                            onPressed: () {
+                                              cartController.addCart(
+                                                  userId: accountController
+                                                      .accountList[0].id
+                                                      .toString(),
+                                                  productId:
+                                                      baseProductController
+                                                          .baseProductList[
+                                                              index]
+                                                          .id
+                                                          .toString());
+                                            },
+                                            icon: const Icon(
+                                                Icons.shopping_basket_rounded)),
+                                        IconButton(
+                                            onPressed: () {
+                                              whitelistController.addWhitelist(
+                                                  userId: accountController
+                                                      .accountList[0].id
+                                                      .toString(),
+                                                  productId:
+                                                      baseProductController
+                                                          .baseProductList[
+                                                              index]
+                                                          .id
+                                                          .toString());
+                                            },
+                                            icon: const Icon(Icons.favorite))
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },

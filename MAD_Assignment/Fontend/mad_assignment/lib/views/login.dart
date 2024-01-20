@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                     color: Colors
                         .white, // You can set the background color of the oval
                   ),
-                  child: Image.asset('logo.png'),
+                  child: Image.asset('assets/logo.png'),
                 ),
               ),
               const Text(
