@@ -1,8 +1,8 @@
+import 'dart:convert';
+
 // To parse this JSON data, do
 //
 //     final orderModel = orderModelFromJson(jsonString);
-
-import 'dart:convert';
 
 List<OrderModel> orderModelFromJson(String str) =>
     List<OrderModel>.from(json.decode(str).map((x) => OrderModel.fromJson(x)));
@@ -23,7 +23,7 @@ class OrderModel {
   int mobileNumber;
   String orderNote;
   String paymentMethod;
-  double totalBill;
+  double totalBill; // Assuming totalBill is a double
   String orderStatus;
   ProductDetails productDetails;
 
@@ -58,7 +58,7 @@ class OrderModel {
         mobileNumber: json["mobile_number"],
         orderNote: json["order_note"],
         paymentMethod: json["payment_method"],
-        totalBill: json["total_bill"],
+        totalBill: json["total_bill"].toDouble(), // Convert to double
         orderStatus: json["order_status"],
         productDetails: ProductDetails.fromJson(json["product_details"]),
       );
@@ -76,7 +76,7 @@ class OrderModel {
         "mobile_number": mobileNumber,
         "order_note": orderNote,
         "payment_method": paymentMethod,
-        "total_bill": totalBill,
+        "total_bill": totalBill, // Ensure it's a double
         "order_status": orderStatus,
         "product_details": productDetails.toJson(),
       };
@@ -85,7 +85,7 @@ class OrderModel {
 class ProductDetails {
   int id;
   String name;
-  int price;
+  double price; // Assuming price is a double
   String image;
   String description;
 
@@ -100,7 +100,7 @@ class ProductDetails {
   factory ProductDetails.fromJson(Map<String, dynamic> json) => ProductDetails(
         id: json["id"],
         name: json["name"],
-        price: json["price"],
+        price: json["price"].toDouble(), // Convert to double
         image: json["image"],
         description: json["description"],
       );
@@ -108,7 +108,7 @@ class ProductDetails {
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        "price": price,
+        "price": price, // Ensure it's a double
         "image": image,
         "description": description,
       };

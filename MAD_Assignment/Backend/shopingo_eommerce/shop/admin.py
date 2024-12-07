@@ -1,12 +1,14 @@
 
 
 from django.contrib import admin
-from .models import MensCloths, MensShoes, MensWatches, WomensGlasses, WomensHandbags, BaseProduct, Cart, Whitelist, BaseCartWhiteList, Checkout
+from .models import Cart, Fruits,Vegetables , Grains, Fertilizers, DairyProducts, BaseProduct, Whitelist, BaseCartWhiteList, Checkout
+from rest_framework import serializers
+
 # Register your models here.
 
 
-@admin.register(MensCloths, MensWatches, MensShoes, WomensHandbags, WomensGlasses, BaseProduct)
-class MensClothsAdmin(admin.ModelAdmin):
+@admin.register(Fruits, Vegetables, Grains, Fertilizers, DairyProducts, BaseProduct)
+class FruitsAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 
@@ -14,19 +16,19 @@ class BaseProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 
-class MensShoesAdmin(admin.ModelAdmin):
+class VegetablesAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 
-class MensWatchesAdmin(admin.ModelAdmin):
+class GrainsAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 
-class WomensHandbagsAdmin(admin.ModelAdmin):
+class FertilizersAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 
-class WomensGlassesAdmin(admin.ModelAdmin):
+class DairyProductsAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'price', 'image', 'description']
 
 

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:mad_assignment/controllers/shop/cloths_controller.dart';
-import 'package:mad_assignment/controllers/shop/glasses_controller.dart';
-import 'package:mad_assignment/controllers/shop/handbags_controller.dart';
-import 'package:mad_assignment/controllers/shop/shoes_controller.dart';
-import 'package:mad_assignment/controllers/shop/watches_controller.dart';
+import 'package:mad_assignment/controllers/shop/fruits_controller.dart';
+import 'package:mad_assignment/controllers/shop/dairyProducts_controller.dart';
+import 'package:mad_assignment/controllers/shop/fertilizers_controller.dart';
+import 'package:mad_assignment/controllers/shop/vegetables_controller.dart';
+import 'package:mad_assignment/controllers/shop/grains_controller.dart';
 import 'package:mad_assignment/controllers/user/account_controller.dart';
 import 'package:mad_assignment/controllers/shop/baseProductController.dart';
 import 'package:mad_assignment/controllers/shop/cart_controller.dart';
@@ -19,11 +19,11 @@ class HomePage extends StatelessWidget {
   BaseProductController baseProductController = BaseProductController();
   CartController cartController = CartController();
   WhitelistController whitelistController = WhitelistController();
-  ClothsController clothsController = ClothsController();
-  ShoesController shoesController = ShoesController();
-  WatchesController watchesController = WatchesController();
-  HandbagsController handbagsController = HandbagsController();
-  GlassesController glassesController = GlassesController();
+  FruitsController fruitsController = FruitsController();
+  VegetablesController vegetablesController = VegetablesController();
+  GrainsController grainsController = GrainsController();
+  FertilizersController fertilizersController = FertilizersController();
+  DairyproductsController dairyProductsController = DairyproductsController();
   var box = GetStorage();
 
   @override
@@ -340,7 +340,7 @@ class HomePage extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("TRENDING CLOTHS COLLECTION",
+              Text("TRENDING FRUITS COLLECTION",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
@@ -355,7 +355,7 @@ class HomePage extends StatelessWidget {
             height: Get.height,
             child: Expanded(
               child: FutureBuilder(
-                  future: clothsController.fetchCloths(),
+                  future: fruitsController.fetchFruits(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator(); // Loading state
@@ -368,7 +368,7 @@ class HomePage extends StatelessWidget {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        itemCount: clothsController.clothsList.length,
+                        itemCount: fruitsController.fruitsList.length,
                         itemBuilder: (context, index) {
                           return Card(
                             child: Column(
@@ -385,7 +385,7 @@ class HomePage extends StatelessWidget {
                                       });
                                     },
                                     child: Image.network(
-                                      clothsController.clothsList[index].image
+                                      fruitsController.fruitsList[index].image
                                           .toString(),
                                       height: Get.height * 0.3,
                                       width: Get.width,
@@ -396,7 +396,7 @@ class HomePage extends StatelessWidget {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      clothsController.clothsList[index].name
+                                      fruitsController.fruitsList[index].name
                                           .toString(),
                                       style: const TextStyle(
                                         color: Colors.black,
@@ -407,7 +407,7 @@ class HomePage extends StatelessWidget {
                                       maxLines: 2,
                                     ),
                                     Text(
-                                        "Rs. ${clothsController.clothsList[index].price.toString()}",
+                                        "Rs. ${fruitsController.fruitsList[index].price.toString()}",
                                         style: const TextStyle(
                                             fontStyle: FontStyle.italic,
                                             fontSize: 16)),
@@ -448,7 +448,7 @@ class HomePage extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("RECOMMEND  FOOTWARE PRODUCTS",
+              Text("RECOMMEND  Vegetables PRODUCTS",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
@@ -463,7 +463,7 @@ class HomePage extends StatelessWidget {
             height: Get.height,
             child: Expanded(
               child: FutureBuilder(
-                  future: shoesController.fetchShoes(),
+                  future: vegetablesController.fetchVegetables(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator(); // Loading state
@@ -476,7 +476,7 @@ class HomePage extends StatelessWidget {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        itemCount: shoesController.shoesList.length,
+                        itemCount: vegetablesController.vegetablesList.length,
                         itemBuilder: (context, index) {
                           return Card(
                             child: Column(
@@ -493,7 +493,8 @@ class HomePage extends StatelessWidget {
                                       });
                                     },
                                     child: Image.network(
-                                      shoesController.shoesList[index].image
+                                      vegetablesController
+                                          .vegetablesList[index].image
                                           .toString(),
                                       height: Get.height * 0.3,
                                       width: Get.width,
@@ -504,7 +505,8 @@ class HomePage extends StatelessWidget {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      shoesController.shoesList[index].name
+                                      vegetablesController
+                                          .vegetablesList[index].name
                                           .toString(),
                                       style: const TextStyle(
                                         color: Colors.black,
@@ -515,7 +517,7 @@ class HomePage extends StatelessWidget {
                                       maxLines: 2,
                                     ),
                                     Text(
-                                        "Rs. ${shoesController.shoesList[index].price.toString()}",
+                                        "Rs. ${vegetablesController.vegetablesList[index].price.toString()}",
                                         style: const TextStyle(
                                             fontStyle: FontStyle.italic,
                                             fontSize: 16)),
@@ -556,7 +558,7 @@ class HomePage extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("RECOMMEND   WATCHES PRODUCTS",
+              Text("RECOMMEND   GRAINS PRODUCTS",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
@@ -571,7 +573,7 @@ class HomePage extends StatelessWidget {
             height: Get.height,
             child: Expanded(
               child: FutureBuilder(
-                  future: watchesController.fetchWatches(),
+                  future: grainsController.fetchGrains(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator(); // Loading state
@@ -584,7 +586,7 @@ class HomePage extends StatelessWidget {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        itemCount: watchesController.watchesList.length,
+                        itemCount: grainsController.grainsList.length,
                         itemBuilder: (context, index) {
                           return Card(
                             child: Column(
@@ -601,7 +603,7 @@ class HomePage extends StatelessWidget {
                                       });
                                     },
                                     child: Image.network(
-                                      watchesController.watchesList[index].image
+                                      grainsController.grainsList[index].image
                                           .toString(),
                                       height: Get.height * 0.3,
                                       width: Get.width,
@@ -612,7 +614,7 @@ class HomePage extends StatelessWidget {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      watchesController.watchesList[index].name
+                                      grainsController.grainsList[index].name
                                           .toString(),
                                       style: const TextStyle(
                                         color: Colors.black,
@@ -623,7 +625,7 @@ class HomePage extends StatelessWidget {
                                       maxLines: 2,
                                     ),
                                     Text(
-                                        "Rs. ${watchesController.watchesList[index].price.toString()}",
+                                        "Rs. ${dairyProductsController.dairyProductsList[index].price.toString()}",
                                         style: const TextStyle(
                                             fontStyle: FontStyle.italic,
                                             fontSize: 16)),
@@ -664,14 +666,14 @@ class HomePage extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("OURS BEST HANDBAGS PRODUCTS",
+              Text("OURS BEST FERTILIZERS PRODUCTS",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("OUR BEST HANDBAGS FOR YOU",
+              Text("OUR BEST FERTILIZERS FOR YOU",
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ],
           ),
@@ -679,7 +681,7 @@ class HomePage extends StatelessWidget {
             height: Get.height,
             child: Expanded(
               child: FutureBuilder(
-                  future: handbagsController.fetchHandbags(),
+                  future: fertilizersController.fetchFertilizers(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator(); // Loading state
@@ -692,7 +694,7 @@ class HomePage extends StatelessWidget {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        itemCount: handbagsController.handbagsList.length,
+                        itemCount: fertilizersController.fertilizersList.length,
                         itemBuilder: (context, index) {
                           return Card(
                             child: Column(
@@ -709,8 +711,8 @@ class HomePage extends StatelessWidget {
                                       });
                                     },
                                     child: Image.network(
-                                      handbagsController
-                                          .handbagsList[index].image
+                                      fertilizersController
+                                          .fertilizersList[index].image
                                           .toString(),
                                       height: Get.height * 0.3,
                                       width: Get.width,
@@ -721,8 +723,8 @@ class HomePage extends StatelessWidget {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Text(
-                                      handbagsController
-                                          .handbagsList[index].name
+                                      fertilizersController
+                                          .fertilizersList[index].name
                                           .toString(),
                                       style: const TextStyle(
                                         color: Colors.black,
@@ -733,7 +735,7 @@ class HomePage extends StatelessWidget {
                                       maxLines: 2,
                                     ),
                                     Text(
-                                        "Rs. ${handbagsController.handbagsList[index].price.toString()}",
+                                        "Rs. ${fertilizersController.fertilizersList[index].price.toString()}",
                                         style: const TextStyle(
                                             fontStyle: FontStyle.italic,
                                             fontSize: 16)),
@@ -774,14 +776,14 @@ class HomePage extends StatelessWidget {
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("RECOMMEND GLASSES PRODUCTS",
+              Text("RECOMMEND DAIRY PRODUCTS",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ],
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(" BEST SELLING GLASSES PRODUCTS",
+              Text(" BEST SELLING DAIRY PRODUCTS",
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ],
           ),
@@ -789,7 +791,7 @@ class HomePage extends StatelessWidget {
             height: Get.height,
             child: Expanded(
               child: FutureBuilder(
-                  future: glassesController.fetchGlasses(),
+                  future: dairyProductsController.fetchDairyProducts(),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const CircularProgressIndicator(); // Loading state
@@ -802,7 +804,8 @@ class HomePage extends StatelessWidget {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                         ),
-                        itemCount: glassesController.glassesList.length,
+                        itemCount:
+                            dairyProductsController.dairyProductsList.length,
                         itemBuilder: (context, index) {
                           return Card(
                             child: SingleChildScrollView(
@@ -821,8 +824,8 @@ class HomePage extends StatelessWidget {
                                         });
                                       },
                                       child: Image.network(
-                                        glassesController
-                                            .glassesList[index].image
+                                        dairyProductsController
+                                            .dairyProductsList[index].image
                                             .toString(),
                                         height: Get.height * 0.3,
                                         width: Get.width,
@@ -835,8 +838,8 @@ class HomePage extends StatelessWidget {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          glassesController
-                                              .glassesList[index].name
+                                          dairyProductsController
+                                              .dairyProductsList[index].name
                                               .toString(),
                                           style: const TextStyle(
                                             color: Colors.black,
@@ -847,7 +850,7 @@ class HomePage extends StatelessWidget {
                                           maxLines: 2,
                                         ),
                                         Text(
-                                            "Rs. ${glassesController.glassesList[index].price.toString()}",
+                                            "Rs. ${dairyProductsController.dairyProductsList[index].price.toString()}",
                                             style: const TextStyle(
                                                 fontStyle: FontStyle.italic,
                                                 fontSize: 16)),
@@ -927,7 +930,7 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(
               child: Text(
-            "Copyright 2023-ALL RIGHTS RESERVED",
+            "Copyright 2024-ALL RIGHTS RESERVED",
             textAlign: TextAlign.center,
             style: TextStyle(fontWeight: FontWeight.bold),
           )),

@@ -278,35 +278,35 @@ class Shop extends StatelessWidget {
                                 TextButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    "Men's Cloths",
+                                    "Fruits",
                                     style: TextStyle(fontSize: 15),
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    "Men's Shoes",
+                                    "Vegetables",
                                     style: TextStyle(fontSize: 15),
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    "Men's Watches",
+                                    "Grains",
                                     style: TextStyle(fontSize: 15),
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    "Women's Handbags",
+                                    "Fertilizers",
                                     style: TextStyle(fontSize: 15),
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    "Women's Glasses",
+                                    "DairyProducts",
                                     style: TextStyle(fontSize: 15),
                                   ),
                                 ),

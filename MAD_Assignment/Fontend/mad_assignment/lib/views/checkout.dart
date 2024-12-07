@@ -458,7 +458,7 @@ class checkOut extends StatelessWidget {
                       totalBill: totalPrice.toString());
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       const Color.fromARGB(
                           255, 45, 139, 50)), // Change background color
                 ),

@@ -19,13 +19,13 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: const Color.fromARGB(255, 150, 156, 153),
       body: Center(
         child: ListView(
           children: [
             Container(
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 178, 197, 10),
+                color: const Color.fromARGB(255, 234, 235, 225),
                 borderRadius: BorderRadius.circular(30),
               ),
               padding: const EdgeInsets.all(10),

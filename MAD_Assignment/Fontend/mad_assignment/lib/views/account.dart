@@ -382,10 +382,10 @@ class Account extends StatelessWidget {
                                 //     city: cityController.text);
                               },
                               style: const ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
+                                  backgroundColor: WidgetStatePropertyAll(
                                       Color.fromARGB(255, 126, 114, 6)),
                                   foregroundColor:
-                                      MaterialStatePropertyAll(Colors.black)),
+                                      WidgetStatePropertyAll(Colors.black)),
                               child: const Text(
                                 "Update",
                                 style: TextStyle(
@@ -397,10 +397,10 @@ class Account extends StatelessWidget {
                                 Get.toNamed('/home');
                               },
                               style: const ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
+                                  backgroundColor: WidgetStatePropertyAll(
                                       Color.fromARGB(255, 126, 114, 6)),
                                   foregroundColor:
-                                      MaterialStatePropertyAll(Colors.black)),
+                                      WidgetStatePropertyAll(Colors.black)),
                               child: const Text(
                                 "Cancel",
                                 style: TextStyle(

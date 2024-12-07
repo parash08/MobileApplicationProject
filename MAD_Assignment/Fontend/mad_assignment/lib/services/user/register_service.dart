@@ -14,7 +14,7 @@ class RegisterService {
   }) async {
     try {
       final response = await http.post(
-        Uri.parse("$url api/register/"),
+        Uri.parse("${url}api/register/"),
         body: {
           'first_name': firstName,
           'last_name': lastName,

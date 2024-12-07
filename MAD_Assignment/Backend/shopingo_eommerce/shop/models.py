@@ -13,27 +13,27 @@ class BaseProduct(models.Model):
     #     abstract = True
 
 
-class MensCloths(BaseProduct):
-    # Additional fields specific to MensCloths, if any
+class Fruits(BaseProduct):
+    # Additional fields specific to fruits, if any
     pass
 
 
-class MensShoes(BaseProduct):
-    # Additional fields specific to MensShoes, if any
+class Vegetables(BaseProduct):
+    # Additional fields specific to Mens, if any
     pass
 
 
-class MensWatches(BaseProduct):
+class Grains(BaseProduct):
     # Additional fields specific to MensWatches, if any
     pass
 
 
-class WomensHandbags(BaseProduct):
+class Fertilizers(BaseProduct):
     # Additional fields specific to WomensHandbags, if any
     pass
 
 
-class WomensGlasses(BaseProduct):
+class DairyProducts(BaseProduct):
     # Additional fields specific to WomensGlasses, if any
     pass
 

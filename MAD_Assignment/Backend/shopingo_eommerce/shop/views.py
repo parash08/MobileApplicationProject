@@ -21,46 +21,48 @@ class BaseProductView(ListCreateAPIView):
     # authentication_classes = [SessionAuthentication]
     # permission_classes = [IsAuthenticated]
 
+# menscloths
+class FruitsView(ListCreateAPIView):
+    queryset = Fruits.objects.all()
+    serializer_class = FruitsSerializers
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name']
+    # authentication_classes = [SessionAuthentication]
+    # permission_classes = [IsAuthenticated]
 
-class MensClothsView(ListCreateAPIView):
-    queryset = MensCloths.objects.all()
-    serializer_class = MensClothsSerializers
+#mensshoes
+class VegetablesView(ListCreateAPIView):
+    queryset = Vegetables.objects.all()
+    serializer_class = VegetablesSerializers
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
     # authentication_classes = [SessionAuthentication]
     # permission_classes = [IsAuthenticated]
 
 
-class MensShoesView(ListCreateAPIView):
-    queryset = MensShoes.objects.all()
-    serializer_class = MensShoesSerializers
+#mensWatchsView
+class GrainsView(ListCreateAPIView):
+    queryset = Grains.objects.all()
+    serializer_class = GrainsSerializers
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
     # authentication_classes = [SessionAuthentication]
     # permission_classes = [IsAuthenticated]
 
 
-class MensWatchesView(ListCreateAPIView):
-    queryset = MensWatches.objects.all()
-    serializer_class = MensWatchesSerializers
+#WomensHandbagsView
+class FertilizersView(ListCreateAPIView):
+    queryset = Fertilizers.objects.all()
+    serializer_class = FertilizersSerializers
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
     # authentication_classes = [SessionAuthentication]
     # permission_classes = [IsAuthenticated]
 
-
-class WomensHandbagsView(ListCreateAPIView):
-    queryset = WomensHandbags.objects.all()
-    serializer_class = WomensHandbagsSerializers
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name']
-    # authentication_classes = [SessionAuthentication]
-    # permission_classes = [IsAuthenticated]
-
-
-class WomensGlassesView(ListCreateAPIView):
-    queryset = WomensGlasses.objects.all()
-    serializer_class = WomensGlassesSerializers
+#WomenGlasses
+class DairyProductsView(ListCreateAPIView):
+    queryset = DairyProducts.objects.all()
+    serializer_class = DairyProductsSerializers
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
     # authentication_classes = [SessionAuthentication]

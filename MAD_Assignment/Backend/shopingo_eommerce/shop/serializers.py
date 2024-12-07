@@ -1,6 +1,6 @@
 
 
-from .models import Cart, MensCloths, MensShoes, MensWatches, WomensGlasses, WomensHandbags, BaseProduct, Whitelist, BaseCartWhiteList, Checkout
+from .models import Cart, Fruits,Vegetables , Grains, Fertilizers, DairyProducts, BaseProduct, Whitelist, BaseCartWhiteList, Checkout
 from rest_framework import serializers
 
 
@@ -10,33 +10,33 @@ class BaseProductSerializers(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class MensClothsSerializers(serializers.ModelSerializer):
+class FruitsSerializers(serializers.ModelSerializer):
     class Meta:
-        model = MensCloths
+        model = Fruits
         fields = "__all__"
 
 
-class MensShoesSerializers(serializers.ModelSerializer):
+class VegetablesSerializers(serializers.ModelSerializer):
     class Meta:
-        model = MensShoes
+        model = Vegetables
         fields = "__all__"
 
 
-class MensWatchesSerializers(serializers.ModelSerializer):
+class GrainsSerializers(serializers.ModelSerializer):
     class Meta:
-        model = MensWatches
+        model = Grains
         fields = "__all__"
 
 
-class WomensHandbagsSerializers(serializers.ModelSerializer):
+class FertilizersSerializers(serializers.ModelSerializer):
     class Meta:
-        model = WomensHandbags
+        model = Fertilizers
         fields = "__all__"
 
 
-class WomensGlassesSerializers(serializers.ModelSerializer):
+class DairyProductsSerializers(serializers.ModelSerializer):
     class Meta:
-        model = WomensGlasses
+        model = DairyProducts
         fields = "__all__"
 
 
@@ -87,3 +87,5 @@ class CheckoutSerializers(serializers.ModelSerializer):
         product_data = BaseProductSerializers(instance.product).data
         representation['product_details'] = product_data
         return representation
+
+
